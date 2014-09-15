@@ -33,6 +33,13 @@
       })
     }
 
+  $scope.deleteMatch = function(){
+    $http.delete('/team_matches/'+ $scope.match.id +'.json').success(function(data){
+      console.log("I have been deleted")
+      // $scope.teams.splice($scope.teams.indexOf(team), 1)
+    })
+    }
+
   $scope.addTeam = function(){
 
     $http.post('/teams.json', { user_id: $scope.user.id,team: $scope.newTeam}).success(function(data){
@@ -44,6 +51,7 @@
 
     })
   }
+
 
   // $scope.joinTeam = function(){
   //   $http.post('/teams.json', { user_id: $scope.user.id,team: $scope.jTeam}).success(function(data){

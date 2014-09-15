@@ -20,4 +20,14 @@ class TeamMatchesController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @team_match = TeamMatch.find(params[:id])
+    @team_match.destroy
+
+    respond_to do |format|
+      format.html { redirect_to teams_url }
+      format.json { head :no_content }
+    end
+  end
 end

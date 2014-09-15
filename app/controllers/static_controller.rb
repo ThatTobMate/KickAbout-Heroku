@@ -17,6 +17,7 @@ class StaticController < ApplicationController
         m["id"] = match.id
         m["status"] = match.status
         m["time"] = match.time
+        m["date"] = match.date
         m["team_a_score"] = match.team_a_score
         m["team_b_score"] = match.team_b_score
         m
@@ -31,6 +32,7 @@ class StaticController < ApplicationController
         m["id"] = match.id
         m["status"] = match.status
         m["time"] = match.time
+        m["date"] = match.date
         m["team_a_score"] = match.team_a_score
         m["team_b_score"] = match.team_b_score
         m

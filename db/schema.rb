@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(:version => 20140915171704) do
     t.datetime "updated_at",   :null => false
     t.integer  "team_a_score"
     t.integer  "team_b_score"
-    t.datetime "time"
+    t.date     "date"
+    t.time     "time"
   end
 
   create_table "teams", :force => true do |t|

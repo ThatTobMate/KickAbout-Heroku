@@ -3,25 +3,15 @@
 <main>
 <section>
   <form role="form" name="updateChallengeForm" ng-submit="updateChallenge()">
-  <div>
-    <label for="name">Name</label>
-    <input type="text" id="Name" placeholder="Name" ng-model="newTeam.name">
+  <div ng-repeat="m in match">
+    <label for="team_a_score">{{m.team_a.name}}</label>
+    <input type="number" id="team_a_score" placeholder="Score" ng-model="matchResult.team_a_score">
   </div>
-  <div>
-    <label for="location">Home Ground</label>
-    <input type="text" id="Location" placeholder="Home ground" ng-model="newTeam.location">
+  <div ng-repeat="m in match">
+    <label for="team_b_score">{{m.team_b.name}}</label>
+    <input type="number" id="team_b_score" placeholder="Score" ng-model="matchResult.team_b_score">
   </div>
-  <div>
-<select ng-model="newTeam.league_id">
-  <option ng-repeat="league in leagues" value="{{league.id}}">{{league.name}}</option>
-  League
-</select>
-  </div>
-  <div>
-    <label for="crest">Crest</label>
-    <input type="text" id="Crest" placeholder="Crest" ng-model="newTeam.crest">
-  </div>
-  <button type="submit" ng-click="homePage()">Submit</button>
+  <button type="submit">Submit</button>
 </form>
 </section>
 

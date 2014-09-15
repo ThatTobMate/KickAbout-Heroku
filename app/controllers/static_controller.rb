@@ -16,6 +16,8 @@ class StaticController < ApplicationController
         m["team_b"] = match.team_b
         m["id"] = match.id
         m["status"] = match.status
+        m["team_a_score"] = match.team_a_score
+        m["team_b_score"] = match.team_b_score
         m
       end
 

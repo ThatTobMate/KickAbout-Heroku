@@ -5,6 +5,7 @@
 #= depend_on_asset "chat-room.html"
 #= depend_on_asset "match-details.html"
 #= depend_on_asset "league-table.html"
+#= depend_on_asset "update-challenge.html"
 
 (function(){
 
@@ -114,7 +115,7 @@
     }
 
     $scope.showMatchResult = function(){
-      console.log("I'm amazing!")
+      $scope.updateChallenge();
     }
 
 
@@ -137,6 +138,7 @@
       $scope.showChat = false;
       $scope.showLeague = false;
       $scope.showMatch = false;
+      $scope.showUpdateChallenge = false;
     }
 
     $scope.profilePage = function(){
@@ -147,6 +149,7 @@
     $scope.showChat = false;
     $scope.showLeague = false;
     $scope.showMatch = false;
+    $scope.showUpdateChallenge = false;
     }
 
     $scope.loadCreateTeamPage = function(){
@@ -157,6 +160,7 @@
     $scope.showLeague = false;
     $scope.showMatch = false;
     $scope.showProfile = false;
+    $scope.showUpdateChallenge = false;
     }
 
     $scope.teamPage = function(){
@@ -167,6 +171,7 @@
     $scope.showLeague = false;
     $scope.showMatch = false;
     $scope.showProfile = false;
+    $scope.showUpdateChallenge = false;
     }
 
     $scope.chatPage = function(){
@@ -177,6 +182,7 @@
     $scope.showLeague = false;
     $scope.showMatch = false;
     $scope.showProfile = false;
+    $scope.showUpdateChallenge = false;
     }
 
     $scope.leaguePage = function(){
@@ -187,6 +193,7 @@
     $scope.showTeam = false;
     $scope.showMatch = false;
     $scope.showProfile = false;
+    $scope.showUpdateChallenge = false;
     }
 
     $scope.matchPage = function(){
@@ -196,6 +203,18 @@
     $scope.showChat = false;
     $scope.showCreateTeam = false;
     $scope.showTeam = false;
+    $scope.showProfile = false;
+    $scope.showUpdateChallenge = false;
+    }
+
+    $scope.updateChallenge = function(){
+    $scope.showHome = true;
+    $scope.showUpdateChallenge = true;
+    $scope.showCreateTeam = false;
+    $scope.showTeam = false;
+    $scope.showChat = false;
+    $scope.showLeague = false;
+    $scope.showMatch = false;
     $scope.showProfile = false;
     }
 
@@ -256,5 +275,11 @@
     }
   })
 
+  app.directive('updateChallenge', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('update-challenge.html') %>"
+    }
+  })
 
 })();

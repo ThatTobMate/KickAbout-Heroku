@@ -1,0 +1,28 @@
+<h1>THIS IS THE UPDATE CHALLENGE</h1>
+
+<main>
+<section>
+  <form role="form" name="updateChallengeForm" ng-submit="updateChallenge()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="Name" placeholder="Name" ng-model="newTeam.name">
+  </div>
+  <div>
+    <label for="location">Home Ground</label>
+    <input type="text" id="Location" placeholder="Home ground" ng-model="newTeam.location">
+  </div>
+  <div>
+<select ng-model="newTeam.league_id">
+  <option ng-repeat="league in leagues" value="{{league.id}}">{{league.name}}</option>
+  League
+</select>
+  </div>
+  <div>
+    <label for="crest">Crest</label>
+    <input type="text" id="Crest" placeholder="Crest" ng-model="newTeam.crest">
+  </div>
+  <button type="submit" ng-click="homePage()">Submit</button>
+</form>
+</section>
+
+</main>

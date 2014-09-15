@@ -1,0 +1,38 @@
+
+<h1>THIS IS THE Create TEAM PAGE</h1>
+
+<main>
+<section>
+  <form role="form" name="createTeamForm" ng-submit="addTeam()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="Name" placeholder="Name" ng-model="newTeam.name">
+  </div>
+  <div>
+    <label for="location">Home Ground</label>
+    <input type="text" id="Location" placeholder="Home ground" ng-model="newTeam.location">
+  </div>
+  <div>
+<select ng-model="newTeam.league_id">
+  <option ng-repeat="league in leagues" value="{{league.id}}">{{league.name}}</option>
+  League
+</select>
+  </div>
+  <div>
+    <label for="crest">Crest</label>
+    <input type="text" id="Crest" placeholder="Crest" ng-model="newTeam.crest">
+  </div>
+  <button type="submit" ng-click="homePage()">Submit</button>
+</form>
+</section>
+
+<section>
+  <form role="form" name="joinTeamForm" ng-submit="joinTeam()">
+  <div>
+    <label for="team_id">Team</label>
+    <input type="number" id="Team_id" placeholder="Team" ng-model="joinTeam.team_id">
+  </div>
+  <button type="submit" ng-click="homePage()">Submit</button>
+</form>
+
+</main>

@@ -1,0 +1,58 @@
+<html ng-app="footballApp">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kick-About!</title>
+  <%= include_gon %>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure//pure.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/base-min.css">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body ng-controller="FootballController">
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <% if user_signed_in? %>
+  <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <a href="#" class="pure-menu-heading">Kick-About!</a>
+
+      <ul>
+          <li class="pure-menu-selected" ng-click="homePage()"><a href="#">Home</a></li>
+          <li ng-click="profilePage()"><a href="#">Profile</a></li>
+          <li ng-click="loadPage()"><a href="#">Team</a></li>
+          <li ng-click="leaguePage()"><a href="#">League</a></li>
+          <li ng-click="matchPage()"><a href="#">Matches</a></li>
+          <li ng-click="chatPage()"><a href="#">Chat</a></li>
+    </ul>
+    <ul> 
+        <li><%= current_user.name %></li>
+        <li> <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+        <li> <%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+
+
+
+  </div>
+
+
+
+<%= yield %>
+
+</body>
+</html>

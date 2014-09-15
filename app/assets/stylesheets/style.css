@@ -1,0 +1,53 @@
+.home{
+  text-align: center;
+  margin-top: 25%;
+  font-size: 30px;
+  color: white;
+}
+
+.home1{
+  text-align: center;
+  margin-top: 12%;
+  font-size: 30px;
+  color: white;
+}
+
+main{
+  margin: 0 auto;
+  height: 60%;
+  width: 80%;
+  background-color: white;
+  border: solid black;
+}
+
+main section{
+  width: 50%;
+  height: 100%;
+  border-right: solid black;
+}
+
+.container{
+  background-color: black;
+}
+
+.box1{
+  background-color: red;
+}
+
+.box2{
+  background-color: blue;
+}
+
+.box3{
+  background-color: yellow;
+}
+
+.box4{
+  background-color: green;
+}
+
+.box5{
+  background-color: orange;
+}
+
+

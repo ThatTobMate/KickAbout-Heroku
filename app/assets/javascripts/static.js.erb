@@ -1,0 +1,231 @@
+#= depend_on_asset "home-page.html"
+#= depend_on_asset "team-page.html"
+#= depend_on_asset "create-team-page.html"
+#= depend_on_asset "profile-page.html"
+#= depend_on_asset "chat-room.html"
+#= depend_on_asset "match-details.html"
+#= depend_on_asset "league-table.html"
+
+(function(){
+
+  var app = angular.module('footballApp', []);
+
+  app.controller('FootballController', ['$scope', '$http', function($scope, $http){
+    $scope.leagues = gon.leagues
+    $scope.user = gon.user
+    $scope.team = gon.team
+    $scope.user_league = gon.user_league
+    $scope.gon_leagues = gon.leagues
+    $scope.match = gon.match
+    $scope.match_deatils = gon.match_details
+
+    $scope.teams = []
+    $scope.newTeam = false;
+    $scope.matchTeam = false;
+    console.log($scope.leagues)
+    $http.get('/teams.json').success(function(data){
+      $scope.teams = data
+    })
+
+    $scope.challengeTeam = function(){
+      $http.post('/team_matches.json', {team_match: {team_b_id: $scope.team.id, team_a_id: $scope.selectedTeam.id, team_match_data: $scope.matchTeam}}).success(function(data){
+        $scope.matchTeam = false;
+      })
+    }
+
+  $scope.addTeam = function(){
+
+    $http.post('/teams.json', { user_id: $scope.user.id,team: $scope.newTeam}).success(function(data){
+    $scope.gon_leagues[$scope.newTeam.league_id -1].teams.push(data);
+    console.log(data)
+    $scope.team = data
+    $scope.newTeam = false;
+
+
+    })
+  }
+
+  // $scope.joinTeam = function(){
+  //   $http.post('/teams.json', { user_id: $scope.user.id,team: $scope.jTeam}).success(function(data){
+  //   $scope.team = data
+
+
+  //   })
+  // }
+
+    $scope.editTeam = function(team){
+      $scope.editATeam = team
+    }
+
+    $scope.updateTeam = function(team){
+      var team_rails = {}
+
+      team_rails.name = team.name
+      team_rails.crest = team.crest
+
+        // $scope.editATeam= false
+      $http.put('/teams/' + team.id + '.json', {
+        team: team_rails}).success(function(data){
+          $scope.teams.splice($scope.teams.indexOf(team), 1)
+          $scope.teams.push(data);
+          $scope.editATeam = false
+          $scope.team = data
+          console.log(data)
+        })
+        
+
+    }
+
+
+    $scope.selectTeam = function(team){
+      console.log(team)
+      $scope.selectedTeam = team;
+    }
+
+    $scope.clearSelectedTeam = function(){
+      $scope.selectedTeam = false;
+    }
+
+
+
+
+
+    $scope.loadPage = function() {
+      if ($scope.team) {
+        $scope.teamPage()
+      } else {
+        $scope.loadCreateTeamPage()
+      }
+
+    }
+
+
+    $scope.homePage = function(){
+      $scope.showHome = false;
+      $scope.showProfile = false;
+      $scope.showTeam = false;
+      $scope.showCreateTeam = false;
+      $scope.showChat = false;
+      $scope.showLeague = false;
+      $scope.showMatch = false;
+    }
+
+    $scope.profilePage = function(){
+    $scope.showHome = true;
+    $scope.showProfile = true;
+    $scope.showCreateTeam = false;
+    $scope.showTeam = false;
+    $scope.showChat = false;
+    $scope.showLeague = false;
+    $scope.showMatch = false;
+    }
+
+    $scope.loadCreateTeamPage = function(){
+    $scope.showHome = true;
+    $scope.showCreateTeam = true;
+    $scope.showTeam = false;
+    $scope.showChat = false;
+    $scope.showLeague = false;
+    $scope.showMatch = false;
+    $scope.showProfile = false;
+    }
+
+    $scope.teamPage = function(){
+    $scope.showHome = true;
+    $scope.showTeam = true;
+    $scope.showCreateTeam = false;
+    $scope.showChat = false;
+    $scope.showLeague = false;
+    $scope.showMatch = false;
+    $scope.showProfile = false;
+    }
+
+    $scope.chatPage = function(){
+    $scope.showHome = true;
+    $scope.showChat = true;
+    $scope.showTeam = false;
+    $scope.showCreateTeam = false;
+    $scope.showLeague = false;
+    $scope.showMatch = false;
+    $scope.showProfile = false;
+    }
+
+    $scope.leaguePage = function(){
+    $scope.showHome = true;
+    $scope.showLeague = true;
+    $scope.showChat = false;
+    $scope.showCreateTeam = false;
+    $scope.showTeam = false;
+    $scope.showMatch = false;
+    $scope.showProfile = false;
+    }
+
+    $scope.matchPage = function(){
+    $scope.showHome = true;
+    $scope.showMatch = true;
+    $scope.showLeague = false;
+    $scope.showChat = false;
+    $scope.showCreateTeam = false;
+    $scope.showTeam = false;
+    $scope.showProfile = false;
+    }
+
+  }])
+
+  app.directive('homePage', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('home-page.html') %>"
+    }
+
+  })
+
+  app.directive('teamPage', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('team-page.html') %>"
+    }
+
+  })
+
+  app.directive('createTeamPage', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('create-team-page.html') %>"
+    }
+
+  })
+
+  app.directive('profilePage', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('profile-page.html') %>"
+    }
+
+  })
+
+  app.directive('chatRoom', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('chat-room.html') %>"
+    }
+
+  })
+
+  app.directive('matchDetails', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('match-details.html') %>"
+    }
+
+  })
+
+  app.directive('leagueTable', function(){
+    return {
+      restrict: 'AEC',
+      templateUrl: "<%= asset_path('league-table.html') %>"
+    }
+  })
+
+
+})();

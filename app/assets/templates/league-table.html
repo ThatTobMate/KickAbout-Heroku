@@ -1,0 +1,44 @@
+<section>
+<h1>THIS IS THE LEAGUE TABLE PAGE</h1>
+
+<div ng-repeat="league in gon_leagues" ng-hide="selectedTeam">
+  <h3>{{league.name}}</h3>
+  <li ng-repeat="team in league.teams" ng-click="selectTeam(team)"><a href="#">{{team.name}}</a></li>
+</div>
+</div>
+</section>
+
+<section ng-show="selectedTeam">
+<table>  
+        <tr>   
+          <td>Name:</td>  
+          <td>{{ selectedTeam.name }}</td>   
+        </tr>  
+        <tr>  
+          <td>Price:</td>  
+          <td> {{ selectedTeam.location}}</td>   
+        </tr>  
+        <tr>  
+          <td>Description:</td>  
+          <td> {{ selectedTeam.crest}}</td>  
+        </tr>  
+      </table>
+      <form role="form" name="createChallengeForm" ng-submit="challengeTeam()">
+  <div>
+    <label for="title">Title</label>
+    <input type="text" id="Title" placeholder="Title" ng-model="matchTeam.title">
+  </div>
+  <div>
+    <label for="location">Location</label>
+    <input type="text" id="Location" placeholder="Home ground" ng-model="matchTeam.location">
+  </div>
+<button type="submit">Submit</button>
+</form>
+      
+
+      <div ng-click="clearSelectedTeam()"><img src="http://www.sirrahmj.co.uk/close.png"></div> 
+      <h2>Selected Team Details</h2>
+
+
+
+</section>

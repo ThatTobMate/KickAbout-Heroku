@@ -1,0 +1,23 @@
+
+<h1>THIS IS THE TEAM PAGE</h1>
+
+<main>
+
+<!--   <map center="[{{team.location}}]" style="display:block;height:30%;width:70%;">
+    <marker position="{{team.location}}" on-click="showInfoWindow(event, 'marker-info')"></marker>
+    <info-window id="marker-info" style="display: none;">
+      <h1> I am an InfoWindow </h1>
+    </info-window>
+  </map> -->
+
+<div>
+  <h1 ng-hide='editATeam'>{{team.name}}</h1>
+  <p ng-show='editATeam'>Name: <input ng-model="editATeam.name"></p>
+  <p>{{team.crest}}</p>
+  <p>{{team.location}}</p>
+  <p>{{user_league.name}}</p>
+</div>
+  <button ng-hide='editATeam' ng-click="editTeam(team)">Edit</button>
+  <button ng-show="editATeam" ng-click="updateTeam(team)">Update</button>
+
+</main>

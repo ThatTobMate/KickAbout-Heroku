@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @team.name %>
+</p>
+
+<h2>Challenged by Teams</h2>
+<ul>
+  <% for team in @team.teams %>
+    <li><%= team.name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
+<%= link_to "Challenge", team_matches_path(:team_b_id => team), :method => :post %>

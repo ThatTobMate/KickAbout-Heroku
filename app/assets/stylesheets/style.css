@@ -12,6 +12,11 @@
   color: white;
 }
 
+table{
+  margin: 0 auto;
+  margin-bottom: 10%;
+}
+
 main{
   margin: 0 auto;
   height: 60%;

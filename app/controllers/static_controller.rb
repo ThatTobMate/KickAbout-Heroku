@@ -1,10 +1,11 @@
 class StaticController < ApplicationController
-
+  before_filter :authenticate_user!
   def index
 
     gon.user = current_user
     gon.team = current_user.team
     if current_user.team
+      gon.points = (current_user.team.wins x 3) + (current_user.team.draws x 1)
       gon.team_members = current_user.team.users
       gon.team_id = current_user.team.id
       gon.match_details = current_user.team.team_matches
@@ -16,6 +17,7 @@ class StaticController < ApplicationController
         m["team_b"] = match.team_b
         m["id"] = match.id
         m["status"] = match.status
+        m["time"] = match.time
         m["team_a_score"] = match.team_a_score
         m["team_b_score"] = match.team_b_score
         m
@@ -29,6 +31,9 @@ class StaticController < ApplicationController
         m["team_b"] = match.team_b
         m["id"] = match.id
         m["status"] = match.status
+        m["time"] = match.time
+        m["team_a_score"] = match.team_a_score
+        m["team_b_score"] = match.team_b_score
         m
       end
 

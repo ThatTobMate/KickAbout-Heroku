@@ -1,6 +1,7 @@
 class LeaguesController < ApplicationController
   # GET /leagues
   # GET /leagues.json
+  before_filter :authenticate_user!
   def index
     @leagues = League.all
 

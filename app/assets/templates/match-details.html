@@ -13,8 +13,8 @@
 
 <div ng-repeat="challenge in challenges">
 Challenges sent:
-  {{challenge.team_a.name}}
-  <p ng-if="challenge.status === false">Pending</p>
+  {{challenge.team_a.name}} : {{challenge.location}}
+  <p ng-if="challenge.status === false">Challenge Pending</p>
   <button ng-if="challenge.status === true" ng-click="showMatchResult()">Update Result</button>
 
 </div>

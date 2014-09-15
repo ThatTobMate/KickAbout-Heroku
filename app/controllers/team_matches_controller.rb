@@ -1,5 +1,6 @@
 class TeamMatchesController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  before_filter :authenticate_user!
   def create
     puts "I am in the create action"
     @team_match = TeamMatch.new

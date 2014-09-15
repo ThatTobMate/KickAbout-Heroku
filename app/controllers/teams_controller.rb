@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  before_filter :authenticate_user!
   # GET /teams
   # GET /teams.json
   def index

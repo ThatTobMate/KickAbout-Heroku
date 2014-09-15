@@ -1,18 +1,16 @@
 <h1>THIS IS THE UPDATE CHALLENGE</h1>
 
 <main>
-<section>
+
   <form role="form" name="updateChallengeForm" ng-submit="updateChallenge()">
   <div ng-repeat="m in match">
     <label for="team_a_score">{{m.team_a.name}}</label>
     <input type="number" id="team_a_score" placeholder="Score" ng-model="matchResult.team_a_score">
-  </div>
-  <div ng-repeat="m in match">
     <label for="team_b_score">{{m.team_b.name}}</label>
     <input type="number" id="team_b_score" placeholder="Score" ng-model="matchResult.team_b_score">
   </div>
   <button type="submit">Submit</button>
 </form>
-</section>
+
 
 </main>

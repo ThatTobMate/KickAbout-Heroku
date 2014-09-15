@@ -15,6 +15,7 @@
   <p ng-show='editATeam'>Name: <input ng-model="editATeam.name"></p>
   <p>{{team.crest}}</p>
   <p>{{team.location}}</p>
+  <p ng-repeat="users in team_members">{{users.name}}</p>
   <p>{{user_league.name}}</p>
 </div>
   <button ng-hide='editATeam' ng-click="editTeam(team)">Edit</button>

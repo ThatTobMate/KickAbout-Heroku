@@ -4,6 +4,7 @@ class StaticController < ApplicationController
 
     gon.user = current_user
     gon.team = current_user.team
+    gon.team_members = current_user.team.users
   if current_user.team
     gon.team_id = current_user.team.id
     gon.match = current_user.team.team_matches.map do |match|

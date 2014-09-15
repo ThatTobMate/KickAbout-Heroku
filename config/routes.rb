@@ -10,6 +10,8 @@ KickAbout::Application.routes.draw do
 
   devise_for :users, controllers: {registrations: :registrations}
 
+  post '/teams/:id/join_team', to: 'teams#join_team'
+  post '/team_matches/:id/accept_match', to: 'team_matches#accept_match'
   get 'static/index'
 
 

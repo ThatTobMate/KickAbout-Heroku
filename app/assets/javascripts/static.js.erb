@@ -14,6 +14,7 @@
     $scope.leagues = gon.leagues
     $scope.user = gon.user
     $scope.team = gon.team
+    $scope.team_members = gon.team_members
     $scope.user_league = gon.user_league
     $scope.gon_leagues = gon.leagues
     $scope.match = gon.match
@@ -29,6 +30,12 @@
 
     $scope.challengeTeam = function(){
       $http.post('/team_matches.json', {team_match: {team_b_id: $scope.team.id, team_a_id: $scope.selectedTeam.id, team_match_data: $scope.matchTeam}}).success(function(data){
+        $scope.matchTeam = false;
+      })
+    }
+
+    $scope.acceptMatch = function(){
+      $http.post('/team_matches/' + $scope.match.id + '.json', {team_match: {team_b_id: $scope.team.id, team_a_id: $scope.selectedTeam.id, team_match_data: $scope.matchTeam}}).success(function(data){
         $scope.matchTeam = false;
       })
     }
@@ -53,13 +60,11 @@
   }
 
 
-  // $scope.joinTeam = function(){
-  //   $http.post('/teams.json', { user_id: $scope.user.id,team: $scope.jTeam}).success(function(data){
-  //   $scope.team = data
-
-
-  //   })
-  // }
+  $scope.joinTeam = function(){
+    $http.post('/teams/' + $scope.joinTeam.team_id + '/join_team.json', { user_id: $scope.user.id, team_id: $scope.joinTeam}).success(function(data){
+    $scope.team = data
+    })
+  }
 
     $scope.editTeam = function(team){
       $scope.editATeam = team

@@ -38,6 +38,26 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
   end
 
+  def join_team
+      @team = Team.find(params[:id])
+respond_to do |format|
+      if @team.save
+        if params[:user_id]
+          user = User.find(params[:user_id])
+          user.team_id = @team.id
+          user.save
+        else
+          current_user.team_id = @team.id
+          current_user.save
+        end 
+        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.json { render json: @team, status: :created, location: @team }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @team.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   # POST /teams
   # POST /teams.json
   def create

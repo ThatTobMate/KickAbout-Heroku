@@ -30,8 +30,13 @@
   <form role="form" name="joinTeamForm" ng-submit="joinTeam()">
   <div>
     <label for="team_id">Team</label>
-    <input type="number" id="Team_id" placeholder="Team" ng-model="joinTeam.team_id">
+    <select ng-model="joinTeam.team_id">
+      <option ng-repeat="team in teams" value="{{team.id}}">{{team.name}}</option>
+      Team
+    </select>
   </div>
+<!--     <input type="number" id="Team_id" placeholder="Team" ng-model="joinTeam.team_id">
+  </div> -->
   <button type="submit" ng-click="homePage()">Submit</button>
 </form>
 

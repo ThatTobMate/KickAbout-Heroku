@@ -5,11 +5,12 @@ class TeamMatchesController < ApplicationController
     @team_match = TeamMatch.new
     params1 = params[:team_match]
     params2 = params1[:team_match_data]
+    params3 = params1[:status]
     @team_match.team_a_id = params1[:team_a_id]
     @team_match.team_b_id = params1[:team_b_id]
     @team_match.title = params2[:title]
     @team_match.location = params2[:location]
-    @team_match.status = params2[:status]
+    @team_match.status = params3
 
     respond_to do |format|
       if @team_match.save
@@ -50,9 +51,12 @@ end
 
  def update
   @team_match = TeamMatch.find(params[:id])
+  params1 = params[:team_match]
+  params2 = params1[:status]
+  @team_match.status = params2
 
   respond_to do |format|
-    if @team_match.update_attributes(params[:teammatch])
+    if @team_match.update_attributes(params[:team_match])
       format.html { redirect_to @team, notice: 'Team was successfully updated.' }
       format.json { render json: @team }
     else
@@ -66,9 +70,9 @@ end
     @team_match = TeamMatch.find(params[:id])
     @team_match.destroy
 
-    respond_to do |format|
-      format.html { redirect_to teams_url }
-      format.json { head :no_content }
-    end
+  respond_to do |format|
+    format.html { redirect_to teams_url }
+    format.json { head :no_content }
+  end
   end
 end

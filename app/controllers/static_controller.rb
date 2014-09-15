@@ -4,17 +4,43 @@ class StaticController < ApplicationController
 
     gon.user = current_user
     gon.team = current_user.team
-    gon.team_members = current_user.team.users
-  if current_user.team
-    gon.team_id = current_user.team.id
-    gon.match = current_user.team.team_matches.map do |match|
-      m = {}
-      m["title"] = match.title
-      m["location"] = match.location
-      m["team_a"] = match.team_a
-      m["team_b"] = match.team_b
-      m
+    if current_user.team
+      gon.team_members = current_user.team.users
+      gon.team_id = current_user.team.id
+      gon.match_details = current_user.team.team_matches
+      gon.match = current_user.team.team_matches.map do |match|
+        m = {}
+        m["title"] = match.title
+        m["location"] = match.location
+        m["team_a"] = match.team_a
+        m["team_b"] = match.team_b
+        m["id"] = match.id
+        m["status"] = match.status
+        m
+      end
+
+      gon.challenges = TeamMatch.where(team_b_id: current_user.team.id).map do |match|
+        m = {}
+        m["title"] = match.title
+        m["location"] = match.location
+        m["team_a"] = match.team_a
+        m["team_b"] = match.team_b
+        m["id"] = match.id
+        m["status"] = match.status
+        m
+      end
+
+    respond_to do |format|
+      format.html { gon }
+      format.json { render json: gon.challenges }
     end
+
+    respond_to do |format|
+      format.html { gon }
+      format.json { render json: gon.match }
+    end
+  
+
   end
 
     

@@ -12,6 +12,7 @@ KickAbout::Application.routes.draw do
 
   post '/teams/:id/join_team', to: 'teams#join_team'
   post '/team_matches/:id/accept_match', to: 'team_matches#accept_match'
+  put '/team_matches/:id/update_score', to: 'team_matches#update_score'
   get 'static/index'
 
 

@@ -69,6 +69,24 @@ end
   end
 end
 
+ def update_score
+  @team_match = TeamMatch.find(params[:id])
+
+  params1 = params[:team_match]
+  @team_match.team_a_score = params1[:team_a_score]
+  @team_match.team_b_score = params1[:team_b_score]
+  
+  respond_to do |format|
+    if @team_match.update_attributes(params[:team_match])
+      format.html { redirect_to @team, notice: 'Team was successfully updated.' }
+      format.json { render json: @team }
+    else
+      format.html { render action: "edit" }
+      format.json { render json: @team.errors, status: :unprocessable_entity }
+    end
+  end
+end
+
   def destroy
     @team_match = TeamMatch.find(params[:id])
     @team_match.destroy

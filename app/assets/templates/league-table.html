@@ -1,22 +1,15 @@
 <div class="leagueback">
 <main>
-<section>
 <h1>THIS IS THE LEAGUE TABLE PAGE</h1>
-
-<!-- <div ng-repeat="league in gon_leagues" ng-hide="selectedTeam">
-  <h3>{{league.name}}</h3>
-  <li ng-repeat="team in league.teams" ng-click="selectTeam(team)"><a href="#">{{team.name}}</a></li>
-</div> -->
-
 
 <table ng-repeat="league in gon_leagues" ng-hide="selectedTeam" class="pure-table">
     <thead>
         <th>{{league.name}}</th>
         <tr>
             <th>Team</th>
-            <th>Wins</th>
-            <th>Draws</th>
-            <th>Losses</th>
+            <th>W</th>
+            <th>D</th>
+            <th>L</th>
             <th>Points</th>
         </tr>
     </thead>
@@ -31,8 +24,7 @@
         </tr>
     </tbody>
 </table>
-</section>
-<section ng-show="selectedTeam">
+<div ng-show="selectedTeam">
 <table>  
         <tr>   
           <td>Name:</td>  
@@ -73,6 +65,6 @@
 
 
 
-</section>
+</div>
 </main>
 </div>

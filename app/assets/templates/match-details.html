@@ -3,7 +3,7 @@
 <h1>Challenges Received</h1>
 
 <div ng-repeat="m in match">
-  {{m.team_a.name}} : {{m.team_b.name}} : {{m.title}} : {{m.location}} : {{m.status}} : {{m.time}} : {{m.date}} : {{m.team_a_score}} : {{m.team_b_score}}
+  <p>{{m.team_a.name}} {{m.team_a_score}} vs {{m.team_b_score}} {{m.team_b.name}} - message {{m.title}} Location - {{m.location}} Time - {{m.time}} Date - {{m.date}}</p>
   <div ng-if="m.status == false" >
   <button ng-click="acceptMatch(m)">Accept</button>
   <button ng-click="deleteMatch(m)">Delete</button>
@@ -15,7 +15,7 @@
 
 <h1>Challenges sent:</h1>
 <div ng-repeat="challenge in challenges">
-  {{challenge.team_a.name}} : {{challenge.location}} : {{challenge.time}} : {{challenge.date}} : {{challenge.team_a_score}} : {{challenge.team_b_score}} : {{challenge.status}}
+  <p>{{challenge.team_b.name}} {{challenge.team_b_score}} vs {{challenge.team_a_score}} {{challenge.team_a.name}} Location - {{challenge.location}} Time - {{challenge.time}} Date - {{challenge.date}}</p>
   <p ng-if="challenge.status == false">Challenge Pending</p>
   <div ng-if="m.team_a_score === null">
   <button ng-if="challenge.status === true" ng-click="showMatchResult(challenge)">Update Result</button>

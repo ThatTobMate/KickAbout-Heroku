@@ -64,6 +64,8 @@ end
          @team_match.team_b.wins = @team_match.team_b.wins + 1
    end
         @team_match.save
+        @team_match.team_a.points = (@team_match.team_a.wins * 3) + (@team_match.team_a.draws * 1)
+        @team_match.team_b.points = (@team_match.team_b.wins * 3) + (@team_match.team_b.draws * 1)
         @team_match.team_a.save
         @team_match.team_b.save
 

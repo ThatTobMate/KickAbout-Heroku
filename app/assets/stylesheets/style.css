@@ -19,6 +19,11 @@
   width: 100%;
 }
 
+.reg{
+  color: white;
+
+}
+
 .leagueback{
   background-image: url('../images/F3.jpg');
   background-size: 100% 100%;

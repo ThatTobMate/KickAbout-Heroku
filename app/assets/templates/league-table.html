@@ -15,12 +15,12 @@
     </thead>
 
     <tbody>
-        <tr ng-repeat="team in league.teams"  class="pure-table-odd">
+        <tr ng-repeat="team in league.teams | orderBy:league.teams.wins"  class="pure-table-odd">
             <td ng-click="selectTeam(team)"><a href="#">{{team.name}}</a></td>
             <td>{{team.wins}}</td>
             <td>{{team.draws}}</td>
             <td>{{team.losses}}</td>
-            <td>{{team.points}}</td>
+            <td>{{points}}</td>
         </tr>
     </tbody>
 </table>

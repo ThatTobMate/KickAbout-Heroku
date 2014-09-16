@@ -5,6 +5,7 @@ class StaticController < ApplicationController
     gon.user = current_user
     gon.team = current_user.team
     if current_user.team
+      gon.points = (current_user.team.wins * 3) + (current_user.team.draws * 1)
       gon.team_members = current_user.team.users
       gon.team_id = current_user.team.id
       gon.match_details = current_user.team.team_matches
@@ -51,8 +52,6 @@ class StaticController < ApplicationController
 
   end
 
-      #   if current_user.team
-      # gon.points = (current_user.team.wins * 3) + (current_user.team.draws * 1)
     if current_user.team
         gon.user_league = current_user.team.league
     end

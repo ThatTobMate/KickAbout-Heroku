@@ -44,9 +44,9 @@
     $scope.challengeTeam = function(){
       $http.post('/team_matches.json', {team_match: {team_b_id: $scope.team.id, team_a_id: $scope.selectedTeam.id, status: $scope.matchStatusDefault, team_match_data: $scope.matchTeam}}).success(function(data){
 
-        // $http.get('/static/index.json').success(function(data) {
-        //     $scope.challenges = data          
-        // })
+        $http.get('/static/index.json').success(function(data) {
+            $scope.challenges = data.challenges          
+        })
         $scope.matchTeam = false;
       })
     }
@@ -117,22 +117,11 @@
     }
 
     $scope.updateScore = function(match){
-
+      console.log(match)
       $http.put('/team_matches/' + match[0].id + '/update_score.json', { team_match: $scope.matchResult}).success(function(data){
           $scope.match.push(data);
 
           console.log("yo");})
-      // $scope.matchResult
-      // if(team_a_score > team_b_score){
-      //   $scope.match.team_a.wins = $scope.match.team_a.wins + 1
-      //   $scope.match.team_b.losses = $scope.match.team_b.losses + 1
-      // }else if(team_a_score == team_b_score){
-      //   $scope.match.team_a.draws = $scope.match.team_a.draws + 1
-      //   $scope.match.team_b.draws = $scope.match.team_b.draws + 1
-      // }else if(team_a_score < team_b_score){
-      //   $scope.match.team_a.losses = $scope.match.team_a.losses +1
-      //   $scope.match.team_b.wins = $scope.match.team_b.wins +1
-      // }
     }
 
 
@@ -148,8 +137,9 @@
         $scope.matchButtons = true;
     }
 
-    $scope.showMatchResult = function(m){
+    $scope.showMatchResult = function(match){
       console.log("hit")
+      console.log(match)
       $scope.showUpdateChallenge = true;
       $scope.showMatch = false;
     }

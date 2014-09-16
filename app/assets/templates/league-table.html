@@ -1,31 +1,37 @@
+<div class="leagueback">
+<main>
 <section>
 <h1>THIS IS THE LEAGUE TABLE PAGE</h1>
 
-<div ng-repeat="league in gon_leagues" ng-hide="selectedTeam">
+<!-- <div ng-repeat="league in gon_leagues" ng-hide="selectedTeam">
   <h3>{{league.name}}</h3>
   <li ng-repeat="team in league.teams" ng-click="selectTeam(team)"><a href="#">{{team.name}}</a></li>
-</div>
-</section>
-<!-- 
+</div> -->
+
+
 <table ng-repeat="league in gon_leagues" ng-hide="selectedTeam" class="pure-table">
     <thead>
         <th>{{league.name}}</th>
         <tr>
-            <th>Position</th>
             <th>Team</th>
+            <th>Wins</th>
+            <th>Draws</th>
+            <th>Losses</th>
             <th>Points</th>
         </tr>
     </thead>
 
     <tbody>
         <tr ng-repeat="team in league.teams"  class="pure-table-odd">
-            <td>{{team.position}}</td>
             <td ng-click="selectTeam(team)"><a href="#">{{team.name}}</a></td>
+            <td>{{team.wins}}</td>
+            <td>{{team.draws}}</td>
+            <td>{{team.losses}}</td>
             <td>{{team.points}}</td>
         </tr>
     </tbody>
-</table> -->
-
+</table>
+</section>
 <section ng-show="selectedTeam">
 <table>  
         <tr>   
@@ -58,7 +64,7 @@
   <label for="date">Date</label>
     <input type="date" id="Date" placeholder="Date" ng-model="matchTeam.date">
   </div>
-<button type="submit">Submit</button>
+<button type="submit" ng-click="clearSelectedTeam()">Submit</button>
 </form>
       
 
@@ -68,3 +74,5 @@
 
 
 </section>
+</main>
+</div>

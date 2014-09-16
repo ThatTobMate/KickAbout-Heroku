@@ -16,7 +16,7 @@ class StaticController < ApplicationController
         m["team_b"] = match.team_b
         m["id"] = match.id
         m["status"] = match.status
-        m["time"] = match.time
+        m["time"] = match.time.strftime("%I:%M %p")
         m["date"] = match.date
         m["team_a_score"] = match.team_a_score
         m["team_b_score"] = match.team_b_score
@@ -31,21 +31,21 @@ class StaticController < ApplicationController
         m["team_b"] = match.team_b
         m["id"] = match.id
         m["status"] = match.status
-        m["time"] = match.time
+        m["time"] = match.time.strftime("%I:%M %p")
         m["date"] = match.date
         m["team_a_score"] = match.team_a_score
         m["team_b_score"] = match.team_b_score
         m
       end
 
-    respond_to do |format|
-      format.html { gon }
-      format.json { render json: gon.challenges }
-    end
+    # respond_to do |format|
+    #   format.html { gon }
+    #   format.json { render json: gon.challenges }
+    # end
 
     respond_to do |format|
       format.html { gon }
-      format.json { render json: gon.match }
+      format.json { render json: { match: gon.match, challenges: gon.challenges}}
     end
   
 

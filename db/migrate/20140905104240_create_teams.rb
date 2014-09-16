@@ -5,9 +5,9 @@ class CreateTeams < ActiveRecord::Migration
       t.string :crest
       t.string :location
       t.integer :league_id
-      t.integer :wins
-      t.integer :losses
-      t.integer :points
+      t.integer :wins, default: 0
+      t.integer :losses, default: 0
+      t.integer :points, default: 0
 
       t.timestamps
     end

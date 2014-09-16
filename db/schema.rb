@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(:version => 20140915171704) do
     t.string   "crest"
     t.string   "location"
     t.integer  "league_id"
-    t.integer  "wins"
-    t.integer  "losses"
-    t.integer  "points"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "draws"
+    t.integer  "wins",       :default => 0
+    t.integer  "losses",     :default => 0
+    t.integer  "points",     :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "draws",      :default => 0
   end
 
   create_table "users", :force => true do |t|

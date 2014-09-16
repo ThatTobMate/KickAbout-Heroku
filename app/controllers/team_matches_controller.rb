@@ -75,7 +75,21 @@ end
   params1 = params[:team_match]
   @team_match.team_a_score = params1[:team_a_score]
   @team_match.team_b_score = params1[:team_b_score]
-  
+      if @team_match.team_a_score > @team_match.team_b_score
+         @team_match.team_a.wins = @team_match.team_a.wins + 1
+         @team_match.team_b.losses = @team_match.team_b.losses + 1
+       elsif @team_match.team_a_score == @team_match.team_b_score
+         @team_match.team_a.draws = @team_match.team_a.draws + 1
+         @team_match.team_b.draws = @team_match.team_b.draws + 1
+       elsif @team_match.team_a_score < @team_match.team_b_score
+         @team_match.team_a.losses = @team_match.team_a.losses + 1
+         @team_match.team_b.wins = @team_match.team_b.wins + 1
+   end
+        @team_match.save
+        @team_match.team_a.save
+        @team_match.team_b.save
+
+      
   respond_to do |format|
     if @team_match.update_attributes(params[:team_match])
       format.html { redirect_to @team, notice: 'Team was successfully updated.' }

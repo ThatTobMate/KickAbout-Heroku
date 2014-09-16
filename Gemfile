@@ -9,6 +9,10 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'carrierwave'
+
+gem 'rmagick', :require => 'RMagick'
+
 gem 'angularjs-rails'
 
 gem 'gon'

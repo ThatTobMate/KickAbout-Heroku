@@ -5,6 +5,41 @@
   color: white;
 }
 
+.chatback{
+  background-image: url('../images/F10.jpg');
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.matchback{
+  background-image: url('../images/F1.jpg');
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.leagueback{
+  background-image: url('../images/F3.jpg');
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.profileback{
+  background-image: url('../images/F6.jpg');
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.teamback{
+  background-image: url('../images/F2.jpg');
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+
 .home1{
   text-align: center;
   margin-top: 12%;
@@ -19,9 +54,10 @@ table{
 
 main{
   margin: 0 auto;
-  height: 60%;
+  height: 70%;
   width: 80%;
   background-color: white;
+  opacity: 0.8;
   border: solid black;
 }
 

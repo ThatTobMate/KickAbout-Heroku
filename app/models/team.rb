@@ -1,5 +1,6 @@
 class Team < ActiveRecord::Base
   attr_accessible :name, :league_id, :crest, :location, :wins, :losses, :points, :draws
+  mount_uploader :crest, ImageUploader
   belongs_to :league
   has_many :users 
   has_many(:team_matches, :foreign_key => :team_a_id, :dependent => :destroy)

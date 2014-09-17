@@ -1,11 +1,7 @@
 <div class="leagueback">
 <main>
 <h1>THIS IS THE LEAGUE TABLE PAGE</h1>
-
-<!-- <div ng-repeat="league in gon_leagues" ng-hide="selectedTeam">
-  <h3>{{league.name}}</h3>
-  <li ng-repeat="team in league.teams" ng-click="selectTeam(team)"><a href="#">{{team.name}}</a></li>
-</div> -->
+<h3>Click a team to challenge them to a match</h3>
 <table ng-repeat="league in gon_leagues" ng-hide="selectedTeam" class="pure-table">
     <thead>
         <th>{{league.name}}</th>
@@ -42,7 +38,8 @@
           <td> {{ selectedTeam.crest}}</td>  
         </tr>  
       </table>
-      <form role="form" name="createChallengeForm" ng-submit="challengeTeam()">
+  <div ng-if="team.id !== selectedTeam.id">
+  <form role="form" name="createChallengeForm" ng-submit="challengeTeam()">
   <div>
     <label for="title">Title</label>
     <input type="text" id="Title" placeholder="Title" ng-model="matchTeam.title">
@@ -59,15 +56,13 @@
   <label for="date">Date</label>
     <input type="date" id="Date" placeholder="Date" ng-model="matchTeam.date">
   </div>
-<button type="submit">Submit</button>
+    <button type="submit">Submit</button>
 </form>
-      
 
-      <div ng-click="clearSelectedTeam()"><img src="http://www.sirrahmj.co.uk/close.png"></div> 
-      <h2>Selected Team Details</h2>
+</div>
 
-
-
+  <div ng-click="clearSelectedTeam()"><img src="http://www.sirrahmj.co.uk/close.png"></div> 
+  <h2>Back to League Table</h2>
 </div>
 </main>
 </div>

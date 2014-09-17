@@ -17,7 +17,7 @@
 <div ng-repeat="challenge in challenges">
   <p>{{challenge.team_b.name}} {{challenge.team_b_score}} vs {{challenge.team_a_score}} {{challenge.team_a.name}} Location - {{challenge.location}} Time - {{challenge.time}} Date - {{challenge.date}}</p>
   <p ng-if="challenge.status == false">Challenge Pending</p>
-  <div ng-if="m.team_a_score === null">
+  <div ng-if="challenge.team_a_score === null">
   <button ng-if="challenge.status === true" ng-click="showMatchResult(challenge)">Update Result</button>
   </div>
 

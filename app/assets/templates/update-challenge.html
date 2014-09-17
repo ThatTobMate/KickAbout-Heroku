@@ -3,13 +3,13 @@
 <h1>THIS IS THE UPDATE CHALLENGE</h1>
 
 
-  <form role="form" name="updateChallengeForm">
-    <label for="team_a_score">{{match[0].team_a.name}}</label>
+  <form role="form" name="updateChallengeForm" ng-submit="updateScore(match, matchResult)">
+    <label for="team_a_score">{{matchToUpdate.team_a.name}}</label>
     <input type="number" id="team_a_score" placeholder="Score" ng-model="matchResult.team_a_score" />
-    <label for="team_b_score">{{match[0].team_b.name}}</label>
+    <label for="team_b_score">{{matchToUpdate.team_b.name}}</label>
     <input type="number" id="team_b_score" placeholder="Score" ng-model="matchResult.team_b_score" />
 
-  <button type="submit" ng-click="updateScore(match, matchResult)">Submit</button>
+  <button type="submit" ng-click="matchPage()">Submit</button>
 </form>
 
 

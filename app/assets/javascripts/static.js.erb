@@ -49,6 +49,7 @@
             $scope.challenges = data.challenges          
         })
         $scope.matchTeam = false;
+        $scope.selectedTeam = false;
       })
     }
 
@@ -118,10 +119,11 @@
     }
 
     $scope.updateScore = function(match){
-      console.log(match)
-      $http.put('/team_matches/' + match[0].id + '/update_score.json', { team_match: $scope.matchResult}).success(function(data){
-          $scope.match.push(data);
+      console.log(match, $scope.matchToUpdate)
 
+      $http.put('/team_matches/' + $scope.matchToUpdate.id + '/update_score.json', { team_match: $scope.matchResult}).success(function(data){
+          // $scope.matchToUpdate.push(data);
+          $scope.apply();
           console.log("yo");})
     }
 
@@ -129,6 +131,7 @@
     $scope.selectTeam = function(team){
       console.log(team)
       $scope.selectedTeam = team;
+      console.log($scope.selectedTeam)
     }
 
     $scope.clearSelectedTeam = function(){
@@ -141,6 +144,7 @@
     $scope.showMatchResult = function(match){
       console.log("hit")
       console.log(match)
+      $scope.matchToUpdate = match;
       $scope.showUpdateChallenge = true;
       $scope.showMatch = false;
     }

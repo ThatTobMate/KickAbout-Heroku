@@ -39,24 +39,22 @@ class StaticController < ApplicationController
         m
       end
 
-    # respond_to do |format|
-    #   format.html { gon }
-    #   format.json { render json: gon.challenges }
-    # end
+      
+        gon.user_league = current_user.team.league
+    end
+    
+    gon.leagues = League.all.as_json(:include => [:teams])
 
     respond_to do |format|
       format.html { gon }
-      format.json { render json: { match: gon.match, challenges: gon.challenges}}
+      format.json { render json: { match: gon.match, challenges: gon.challenges, league: gon.leagues}}
     end
   
 
   end
 
-    if current_user.team
-        gon.user_league = current_user.team.league
-    end
-     gon.leagues = League.all.as_json(:include => [:teams])
-  end
+ 
+  
 
 
 end

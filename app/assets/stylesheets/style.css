@@ -1,3 +1,5 @@
+
+
 .home{
   text-align: center;
   margin-top: 25%;
@@ -58,15 +60,18 @@ table{
 }
 
 main{
-  margin: 0 auto;
+  margin-top: 3%;
+  margin-left: 10%;
+  position: absolute;
   height: 70%;
   width: 80%;
   background-color: white;
   opacity: 0.8;
-  border: solid black;
+  font-family: 'Amaranth', sans-serif;
 }
 
 main section{
+  font-family: 'Amaranth', sans-serif;
   width: 50%;
   height: 100%;
   border-right: solid black;
@@ -98,6 +103,7 @@ main section{
 
 @media screen and (max-width: 36.375em) {
   main{
+  margin-left: 0;
   height: 100%;
   width: 100%;
 }  

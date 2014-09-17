@@ -58,7 +58,7 @@
       console.log(match)
       $http.put('/team_matches/' + match.id + '.json', {team_match: {team_a_id: $scope.team.id, status: $scope.matchStatus}}).success(function(data){
          $http.get('/static/index.json').success(function(data) {
-            $scope.match = data          
+            $scope.match = data.match          
         })
         $scope.matchTeam = false;
       })
@@ -122,8 +122,12 @@
       console.log(match, $scope.matchToUpdate)
 
       $http.put('/team_matches/' + $scope.matchToUpdate.id + '/update_score.json', { team_match: $scope.matchResult}).success(function(data){
-          // $scope.matchToUpdate.push(data);
-          $scope.apply();
+        $http.get('/static/index.json').success(function(data) {
+          
+            $scope.match = data.match
+            $scope.gon_leagues = data.league         
+        })
+          // $scope.match.push(data);
           console.log("yo");})
     }
 

@@ -63,6 +63,9 @@ respond_to do |format|
   # POST /teams.json
   def create
     @team = Team.new(params[:team])
+    @team.wins = 0
+    @team.losses = 0
+    @team.points = 0
   
     respond_to do |format|
       if @team.save

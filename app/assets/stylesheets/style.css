@@ -4,12 +4,12 @@
   color: white;
 }
 
-.pure-menu.pure-menu-open.pure-menu-horizontal a {
+.pure-menu.pure-menu-open.pure-menu-horizontal a{
   color: white;
   font-family: 'Amaranth', sans-serif;
 }
 
-.pure-menu.pure-menu-open.pure-menu-horizontal a:hover {
+.pure-menu.pure-menu-open.pure-menu-horizontal a:hover{
   color: black;
   background-color: yellow;
 }
@@ -120,6 +120,7 @@ main section{
   margin-left: 0;
   height: 100%;
   width: 100%;
-}  
+  }
+}
 
 

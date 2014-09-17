@@ -1,4 +1,18 @@
+.pure-menu.pure-menu-open.pure-menu-horizontal{
+  font-family: 'Amaranth', sans-serif;
+  background-color: black;
+  color: white;
+}
 
+.pure-menu.pure-menu-open.pure-menu-horizontal a {
+  color: white;
+  font-family: 'Amaranth', sans-serif;
+}
+
+.pure-menu.pure-menu-open.pure-menu-horizontal a:hover {
+  color: black;
+  background-color: yellow;
+}
 
 .home{
   text-align: center;

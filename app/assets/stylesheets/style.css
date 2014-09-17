@@ -22,14 +22,14 @@
 }
 
 .chatback{
-  background-image: url('../images/F10.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/F10.jpg');
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
 }
 
 .matchback{
-  background-image: url('../images/F1.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/F1.jpg');
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
@@ -41,21 +41,21 @@
 }
 
 .leagueback{
-  background-image: url('../images/F3.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/F3.jpg');
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
 }
 
 .profileback{
-  background-image: url('../images/F6.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/F6.jpg');
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
 }
 
 .teamback{
-  background-image: url('../images/F2.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/F2.jpg');
   background-size: 100% 100%;
   height: 100%;
   width: 100%;

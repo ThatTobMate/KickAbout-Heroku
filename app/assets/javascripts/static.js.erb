@@ -82,6 +82,7 @@ $scope.addTeam = function(){
     $http.get('/teams.json').success(function(data){
       $scope.teams = data.teams
     })
+    $scope.team = data
     $scope.newTeam = false;
 
 
@@ -94,6 +95,7 @@ $scope.joinTeam = function(){
     $http.get('/teams.json').success(function(data){
       $scope.teams = data.teams
     })
+    $scope.team = data
   })
 }
 

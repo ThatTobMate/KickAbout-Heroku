@@ -1,39 +1,39 @@
-<div class="matchback reg">
+<div class="matchback reg pure-form pure-form-aligned">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
+  <div class="pure-control-group"><%= f.label :name %><br />
   <%= f.text_field :name, autofocus: true %></div>
 
 
-  <div><%= f.label :image %><br />
+  <div class="pure-control-group"><%= f.label :image %><br />
   <%= f.file_field :image%></div>
 
-  <div><%= f.label :position %><br />
+  <div class="pure-control-group"><%= f.label :position %><br />
   <%= f.text_field :position%></div>
 
-  <div><%= f.label :location %><br />
+  <div class="pure-control-group"><%= f.label :location %><br />
   <%= f.text_field :location%></div>
 
-  <div><%= f.label :dob %><br />
+  <div class="pure-control-group"><%= f.label :dob %><br />
   <%= f.date_select :dob%></div>
 
-  <div><%= f.label :height %><br />
+  <div class="pure-control-group"><%= f.label :height %><br />
   <%= f.number_field :height%></div>
 
-  <div><%= f.label :email %><br />
+  <div class="pure-control-group"><%= f.label :email %><br />
   <%= f.email_field :email%></div>
 
-  <div><%= f.label :password %><br />
+  <div class="pure-control-group"><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div class="pure-control-group"><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
-<div class="matchback reg">
+</div>

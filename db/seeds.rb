@@ -10,5 +10,4 @@
 
 League.create([
   {name: "London Division", location: "London"},
-  {name: "Essex Division", location: "Essex"},
   ])

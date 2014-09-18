@@ -1,34 +1,42 @@
 <div class="teamback">
-  
-<main>
-<h1>THIS IS THE TEAM PAGE</h1>
 
-
-<!--   <map center="[{{team.location}}]" style="display:block;height:30%;width:70%;">
-    <marker position="{{team.location}}" on-click="showInfoWindow(event, 'marker-info')"></marker>
-    <info-window id="marker-info" style="display: none;">
-      <h1> I am an InfoWindow </h1>
-    </info-window>
-  </map> -->
-
-<div>
-  <h1 ng-hide='editATeam'>{{team.name}}</h1>
-  <p ng-show='editATeam'>Name: <input ng-model="editATeam.name"></p>
-  <p>{{team.crest}}</p>
-  <p>{{team.location}}</p>
-  <p>{{user_league.name}}</p>
-</div>
-<div>
-  <p ng-repeat="users in team_members">{{users.name}}</p>
-</div>
-<div>
-  wins{{team.wins}}
-  losses{{team.losses}}
-  draws{{team.draws}}
-  points{{team.points}}
-</div>
-  <button ng-hide='editATeam' ng-click="editTeam(team)">Edit</button>
-  <button ng-show="editATeam" ng-click="updateTeam(team)">Update</button>
-
-</main>
+  <main>
+    <div class="main_div">
+      <div class="about_team">
+        <h1 ng-hide='editATeam'>{{team.name}}</h1>
+        <p ng-show='editATeam'>Name: <input ng-model="editATeam.name"></p>
+        <p><img src="{{team.crest}}"></p>
+        <p>Home Ground: {{team.location}}</p>
+        <p>League: {{user_league.name}}</p>
+        <button ng-hide='editATeam' ng-click="editTeam(team)">Change Team Name</button>
+        <button ng-show="editATeam" ng-click="updateTeam(team)">Confirm</button>
+      </div>
+      <div class="team_mates">
+        <h1>Players</h1>
+        <p ng-repeat="users in team_members">{{users.name}} - {{users.position}}</p>
+      </div>
+      <div class="stats">
+        <h1>Statistics</h1>
+        <table class="pure-table">
+          <thead>
+            <th>Team Stats</th>
+            <tr>
+              <th>Wins</th>
+              <th>Draws</th>
+              <th>Losses</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pure-table-odd">
+              <td>{{team.wins}}</td>
+              <td>{{team.draws}}</td>
+              <td>{{team.losses}}</td>
+              <td>{{team.points}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
 </div>

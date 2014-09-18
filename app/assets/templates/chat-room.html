@@ -1,13 +1,17 @@
 <div class="chatback">
-<h1>THIS IS THE CHAT ROOM PAGE</h1>
+  <h1>THIS IS THE CHAT ROOM PAGE</h1>
 
-<main>
-  <h1>YOLO</h1>
+  <main>
+    <div class="map_div">
+      <map ng-cloak center="[{{team.location}}]" style="display:block;height:100%;width:100%;">
+        <marker position="{{team.location}}" on-click="showInfoWindow(event, 'marker-info')"></marker>
+      </map>
+    </div>
 
 
 
 
-</main>
+  </main>
 
 
 

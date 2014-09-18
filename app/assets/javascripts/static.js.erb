@@ -79,8 +79,9 @@ $scope.addTeam = function(){
 
   $http.post('/teams.json', { user_id: $scope.user.id,team: $scope.newTeam}).success(function(data){
     $scope.gon_leagues[$scope.newTeam.league_id -1].teams.push(data);
-    console.log(data)
-    $scope.team = data
+    $http.get('/teams.json').success(function(data){
+      $scope.teams = data.teams
+    })
     $scope.newTeam = false;
 
 
@@ -90,7 +91,9 @@ $scope.addTeam = function(){
 // joining a team
 $scope.joinTeam = function(){
   $http.post('/teams/' + $scope.joinTeam.team_id + '/join_team.json', { user_id: $scope.user.id, team_id: $scope.joinTeam}).success(function(data){
-    $scope.team = data
+    $http.get('/teams.json').success(function(data){
+      $scope.teams = data.teams
+    })
   })
 }
 

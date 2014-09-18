@@ -87,6 +87,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.1.1)
     rails (3.2.18)
       actionmailer (= 3.2.18)
       actionpack (= 3.2.18)
@@ -143,6 +144,7 @@ DEPENDENCIES
   jquery-rails
   pg
   pry-rails
+  railroady
   rails (= 3.2.18)
   rmagick
   sass-rails (~> 3.2.3)

@@ -8,10 +8,11 @@
           <input type="text" id="Name" placeholder="Name" ng-model="newTeam.name">
         </div>
         <div class="pure-control-group">
-          <label for="location">Home Ground Postcode</label>
+          <label for="location">Home Ground</label>
           <input type="text" id="Location" placeholder="Home ground" ng-model="newTeam.location">
         </div>
         <div class="pure-control-group">
+          <label for="league">League</label>
           <select ng-model="newTeam.league_id">
             <option ng-repeat="league in leagues" value="{{league.id}}">{{league.name}}</option>
             League

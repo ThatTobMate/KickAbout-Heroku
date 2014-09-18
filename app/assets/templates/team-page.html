@@ -5,7 +5,6 @@
       <div class="about_team">
         <h1 ng-hide='editATeam'>{{team.name}}</h1>
         <p ng-show='editATeam'>Name: <input ng-model="editATeam.name"></p>
-        <p><img src="{{team.crest}}"></p>
         <p>Home Ground: {{team.location}}</p>
         <p>League: {{user_league.name}}</p>
         <button ng-hide='editATeam' ng-click="editTeam(team)">Change Team Name</button>
@@ -19,11 +18,10 @@
         <h1>Statistics</h1>
         <table class="pure-table">
           <thead>
-            <th>Team Stats</th>
             <tr>
-              <th>Wins</th>
-              <th>Draws</th>
-              <th>Losses</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
               <th>Points</th>
             </tr>
           </thead>

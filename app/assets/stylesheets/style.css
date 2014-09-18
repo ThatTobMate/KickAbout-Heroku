@@ -14,6 +14,10 @@
   background-color: yellow;
 }
 
+.pure-table{
+  width: 100%;
+}
+
 .home{
   text-align: center;
   margin-top: 25%;
@@ -74,6 +78,7 @@ table{
 }
 
 main{
+  text-align: center;
   margin-top: 3%;
   margin-left: 10%;
   position: absolute;
@@ -88,7 +93,6 @@ main{
   font-family: 'Amaranth', sans-serif;
   width: 100%;
   height: 100%;
-  border-right: solid black;
 }
 
 .map_div{
@@ -146,32 +150,106 @@ main{
 }
 
 .about_team{
-  border: solid black;
   margin: 0 auto;
-  width: 25%;
+  width: 50%;
   text-align: center;
+  margin-bottom: 5%
 }
 
 .stats{
   text-align: center;
-  border: solid black;
+  border-right: solid black;
   float: left;
   display: inline-block;
-  width: 45%;
+  width: 50%;
 }
 
 .team_mates{
   text-align: center;
-  border: solid black;
   display: inline-block;
-  width: 45%;
+  width: 50%;
 }
+
+.profile_pic{
+  width: 25em;
+  height: 18em;
+}
+
+.crest_pic{
+  width: 25em;
+  height: 18em;
+}
+
+.left_profile{
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.right_profile{
+  display: inline-block;
+  width: 50%;
+}
+
 @media screen and (max-width: 36.375em) {
   main{
     margin-left: 0;
     height: 100%;
     width: 100%;
   }
+  .about_team{
+  border-bottom: solid black;
+  width: 100%;
+  padding-bottom: 5%;
+}
+  .team_mates{
+  width: 100%;
+  border-bottom: solid black;
+  margin-bottom: 10%;
+  padding-bottom: 5%;
+}
+  .stats{
+
+  width: 100%;
+}
+
+.left_profile{
+  width: 100%;
+}
+
+.right_profile{
+
+  width: 100%;
+}
+
+.pure-menu-heading{
+  width: 100%;
+}
+
+.top_menu{
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.middle_menu{
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.bottom_menu{
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.user_menu{
+  width: 15.2em;
+  display: inline-block;
+  float: left;
+}
+
 }
 
 

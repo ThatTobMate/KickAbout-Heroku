@@ -9,7 +9,7 @@
 
 (function(){
 
-  var app = angular.module('footballApp', []);
+  var app = angular.module('footballApp', ['ngMap']);
 
   app.controller('FootballController', ['$scope', '$http', function($scope, $http){
     // all the leagues including the team information.
@@ -125,7 +125,7 @@ $scope.updateTeam = function(team){
 
         $http.put('/team_matches/' + $scope.matchToUpdate.id + '/update_score.json', { team_match: $scope.matchResult}).success(function(data){
           $http.get('/static/index.json').success(function(data) {
-            
+
             $scope.match = data.match
             $scope.gon_leagues = data.league         
           })

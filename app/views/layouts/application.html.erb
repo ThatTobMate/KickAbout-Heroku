@@ -29,20 +29,19 @@
 
   <% if user_signed_in? %>
   <div class="pure-menu pure-menu-open pure-menu-horizontal">
-    <a href="/static/index" class="pure-menu-heading">Kick-About!</a>
+    <a href="/static/index" class="pure-menu-heading">Kick-About!  Welcome <%= current_user.name %></a>
 
     <ul>
-      <li class="pure-menu-selected" ng-click="homePage()"><a href="#">Home</a></li>
-      <li ng-click="profilePage()"><a href="#">Profile</a></li>
-      <li ng-click="loadPage()"><a href="#">Team</a></li>
-      <li ng-click="leaguePage()"><a href="#">League</a></li>
-      <li ng-click="matchPage()"><a href="#">Matches</a></li>
-      <li ng-click="chatPage()"><a href="#">Chat</a></li>
+      <li class="top_menu" ng-click="homePage()"><a href="#">Home</a></li>
+      <li class="top_menu" ng-click="profilePage()"><a href="#">Profile</a></li>
+      <li class="middle_menu" ng-click="loadPage()"><a href="#">Team</a></li>
+      <li class="middle_menu" ng-click="leaguePage()"><a href="#">League</a></li>
+      <li class="bottom_menu" ng-click="matchPage()"><a href="#">Matches</a></li>
+      <li class="bottom_menu"ng-click="chatPage()"><a href="#">Chat</a></li>
     </ul>
     <ul> 
-      <li>Welcome <%= current_user.name %></li>
-      <li> <%= link_to 'Edit Profile', edit_user_registration_path %></li>
-      <li> <%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
+      <li class="user_menu"> <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+      <li class="user_menu"> <%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
       <% else %>
       <li><%= link_to 'Login', new_user_session_path %></li>
       <li><%= link_to 'Sign up', new_user_registration_path %></li>
@@ -56,6 +55,6 @@
 
 
   <%= yield %>
-  
+
 </body>
 </html>

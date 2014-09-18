@@ -1,14 +1,19 @@
 <div class="chatback">
-  <h1>THIS IS THE CHAT ROOM PAGE</h1>
 
   <main>
-    <div class="map_div">
-      <map ng-cloak center="[{{team.location}}]" style="display:block;height:100%;width:100%;">
-        <marker position="{{team.location}}" on-click="showInfoWindow(event, 'marker-info')"></marker>
-      </map>
-    </div>
+  <h1>Chat to your team:</h1>
+  <div>
+    <h2>Me: Hi Guys</h2>
+    <h2>John: Yo</h2>
+    <h2>Josh: Who are we going to smash today?</h2>
+    <h2>Me: Arsenal?</h2>
+    <h2>John: Too Easy</h2>
 
-
+  </div>
+  <div class="chat_message">
+  <input type="text" placeholder="Chat..."/>
+  <button class="pure-button pure-button-primary">Submit</button>
+  </div>
 
 
   </main>

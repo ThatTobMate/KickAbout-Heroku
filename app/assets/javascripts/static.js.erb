@@ -64,6 +64,7 @@ $scope.acceptMatch = function(match){
  })
 }
 
+
 //deleteing/rejecting a match challenge
 $scope.deleteMatch = function(match){
   $http.delete('/team_matches/'+ match.id +'.json').success(function(data){
@@ -79,8 +80,9 @@ $scope.addTeam = function(){
 
   $http.post('/teams.json', { user_id: $scope.user.id,team: $scope.newTeam}).success(function(data){
     $scope.gon_leagues[$scope.newTeam.league_id -1].teams.push(data);
-    $http.get('/teams.json').success(function(data){
+    $http.get('/static/index.json').success(function(data){
       $scope.teams = data.teams
+      $scope.user_league = data.userleague[0]
     })
     $scope.team = data
     $scope.newTeam = false;
@@ -92,8 +94,9 @@ $scope.addTeam = function(){
 // joining a team
 $scope.joinTeam = function(){
   $http.post('/teams/' + $scope.joinTeam.team_id + '/join_team.json', { user_id: $scope.user.id, team_id: $scope.joinTeam}).success(function(data){
-    $http.get('/teams.json').success(function(data){
+    $http.get('/static/index.json').success(function(data){
       $scope.teams = data.teams
+      $scope.user_league = data.userleague[0]
     })
     $scope.team = data
   })
@@ -153,8 +156,6 @@ $scope.updateTeam = function(team){
       }
 
       $scope.showMatchResult = function(match){
-        console.log("hit")
-        console.log(match)
         $scope.matchToUpdate = match;
         $scope.showUpdateChallenge = true;
         $scope.showMatch = false;

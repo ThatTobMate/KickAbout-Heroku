@@ -47,7 +47,7 @@ class StaticController < ApplicationController
 
     respond_to do |format|
       format.html { gon }
-      format.json { render json: { match: gon.match, challenges: gon.challenges, league: gon.leagues, teams: gon.team}}
+      format.json { render json: { match: gon.match, challenges: gon.challenges, league: gon.leagues, teams: gon.team, userleague: gon.leagues}}
     end
   
 

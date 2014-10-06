@@ -33,10 +33,16 @@
 }
 
 .landing_back{
-  background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/wallpaper.jpg');
+  background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/1.png');
+  padding-top: 30%;
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
+}
+
+.sign_in{
+  margin: 0 auto;
+  width: 15%;
 }
 
 .matchback{
@@ -67,7 +73,9 @@
 
 .teamback{
   background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/F2.jpg');
-  background-size: 100% 100%;
+  /*background-size: 100% 100%;*/
+  background-size: cover;
+  background-position: center center;
   height: 100%;
   width: 100%;
 }
@@ -205,8 +213,8 @@ main{
   border: solid yellow;
   background-color: black;
   list-style: none;
-  height: 6%;
-  width: 20%;
+  height: 100%;
+  width: 40%;
   padding-left: 5%;
   padding-top: 1%;
   display: inline-block;
@@ -220,11 +228,12 @@ main{
 .landing_div{
   color: white;
   font-family:  'Amaranth', sans-serif;
-  margin-left: 40%;
-  margin-top: 20%;
+  margin: 0 auto;
+  width: 300px;
+  height: 50px;
 }
 
-@media screen and (max-width: 36.375em) {
+@media screen and (max-width: 720px) {
   main{
     margin-left: 0;
     height: 100%;
@@ -286,6 +295,11 @@ main{
 .landing{
   width: 50%;
   height: 10%;
+}
+
+.sign_in{
+  margin: 25%;
+  width: 15%;
 }
 
 }

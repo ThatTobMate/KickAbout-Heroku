@@ -1,7 +1,16 @@
-<div class="landing_back">
-<div class="landing_div">
-  <h1>Kick-About!</h1>
-      <li class="landing"><%= link_to 'Login', new_user_session_path %></li>
-      <li class="landing"><%= link_to 'Sign up', new_user_registration_path %></li>
+
+<div class="landing_back reg pure-form pure-form-aligned">
+<div class="sign_in">
+<%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <div "pure-control-group"><%= f.label :email %><br />
+    <%= f.text_field :email %></div>
+  <div "pure-control-group"><%= f.label :password %><br />
+    <%= f.password_field :password %></div>
+  <div "pure-control-group"><%= f.check_box :remember_me %></div>
+  <div "pure-control-group"><%= f.label :remember_me %></div>
+  <div "pure-control-group"><%= f.submit 'Sign in' %></div>
+  <div "pure-control-group"><%= link_to 'Sign up', new_user_registration_path %></div>
+  <%= link_to "Forgot your password?", new_password_path(:user) %>
+<% end %>
 </div>
 </div>

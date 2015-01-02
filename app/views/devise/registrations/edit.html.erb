@@ -17,7 +17,7 @@
   <div class="pure-control-group"><%= f.label :location %><br />
   <%= f.text_field :location%></div>
 
-  <div class="pure-control-group"><%= f.label :dob %><br />
+  <div class="pure-control-group"><%= f.label :dob %>(cm)<br />
   <%= f.date_select :dob%></div>
 
   <div class="pure-control-group"><%= f.label :height %><br />
@@ -43,6 +43,11 @@
 <% end %>
 
 <h3>Cancel my account</h3>
+
+<%= link_to "Add your Google account", user_omniauth_authorize_path(:google_oauth2) %>
+<%= link_to "Add your Facebook account", user_omniauth_authorize_path(:facebook) %>
+<%= link_to "Add your Twitter account", user_omniauth_authorize_path(:twitter) %>
+
 
 <p >Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 </fieldset>

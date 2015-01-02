@@ -9,7 +9,7 @@
 
 
   <div class="pure-control-group"><%= f.label :image %><br />
-  <%= f.file_field :image%></div>
+  <%= f.text_field :image%></div>
 
   <div class="pure-control-group"><%= f.label :position %><br />
   <%= f.text_field :position%></div>
@@ -17,10 +17,10 @@
   <div class="pure-control-group"><%= f.label :location %><br />
   <%= f.text_field :location%></div>
 
-  <div class="pure-control-group"><%= f.label :dob %><br />
+  <div class="pure-control-group"><%= f.label :DOB %><br />
   <%= f.date_select :dob%></div>
 
-  <div class="pure-control-group"><%= f.label :height %><br />
+  <div class="pure-control-group"><%= f.label :height %>(cm)<br />
   <%= f.number_field :height%></div>
 
   <div class="pure-control-group"><%= f.label :email %><br />

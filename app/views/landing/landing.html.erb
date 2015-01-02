@@ -1,5 +1,10 @@
 
 <div class="landing_back reg pure-form pure-form-aligned">
+	<div class="social">
+	<%= link_to "Login with Twitter", user_omniauth_authorize_path(:twitter), :class => "pure-button button-secondary" %>
+	<%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :class => "pure-button pure-button-primary" %>
+	<%= link_to "Login with Google", user_omniauth_authorize_path(:google_oauth2), :class => "pure-button button-error" %>
+	</div>
 <div class="sign_in">
 <%= form_for(:user, :url => session_path(:user)) do |f| %>
   <div "pure-control-group"><%= f.label :email %><br />

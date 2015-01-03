@@ -92,7 +92,7 @@ main{
   margin-top: 3%;
   margin-left: 10%;
   position: absolute;
-  height: 80%;
+  height: 85%;
   width: 80%;
   background-color: white;
   opacity: 0.8;
@@ -299,6 +299,15 @@ main{
     background: #00d9ff;
 }
 
+.rules{
+  margin-top: -20px;
+  height: 30px;
+  width: 19%;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 @media screen and (max-width: 720px) {
   main{
     margin-left: 0;
@@ -421,6 +430,14 @@ main{
     -moz-box-shadow: 1px 1px 3px #000;
     -webkit-box-shadow: 1px 1px 3px #000;
     box-shadow: 1px 1px 3px #000;
+}
+
+.chatback{
+  height: 140%;
+}
+
+.chatback main{
+  height: 135%;
 }
 
 }

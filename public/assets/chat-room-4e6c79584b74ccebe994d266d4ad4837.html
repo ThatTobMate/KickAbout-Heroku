@@ -1,0 +1,43 @@
+<div class="chatback">
+
+  <main>
+  <div class='page1' ng-hide="changeContent">
+  <h1>Rules:</h1>
+  <p>Welcome to KickAbout, a site where you can create your own football team and challenge others to a real match. Record your results and climb your way up the KickAbout League.</p>
+  <div>
+    <h2>Challenge a team:</h2>
+    <h4>1. Create your own team or join a friends team.</h4>
+    <h4>2. When you have your team ready and you want to challenge a team to a match, go to the league table and click on the team.</h4>
+    <h4>3. Fill out the details and send off the challenge.</h4>
+    <h4>4. Go to the matches page and you will see the challenge you have sent off.</h4>
+
+    <h2>Accept or deny a challenge:</h2>
+    <h4>1. Go to the matches page</h4>
+    <h4>2. Here you will see any incoming challenges from other teams, you can either accept or deny the challenge.</h4>
+    <div><a href ng-click="changeContent = !changeContent">Next</a></div>
+    </div>
+
+  <div class='page2' ng-show="changeContent">
+    <h2>Submitting a result:</h2>
+    <h4>1. Once you have either accepted or had a challenge accepted, you will now see an option to update the result.</h4>
+    <h4>2. After the match has been played the winning team should enter in the final score.</h4>
+    <h4>3. Once the final score has been updated you will see your teams record has changed in the league table and on your teams profile.</h4>
+    <h4>4. The result and who you played will be recorded on the matches page for future reference</h4>
+
+    <h2>Points system:</h2>
+    <h4>Win: +3 points</h4>
+    <h4>Draw: +1 point</h4>
+    <h4>Loss: 0 points</h4>
+
+    <h2>Social:</h2>
+    <h4>Link your social network sites by clicking the 'Link accounts' button, for easier access to the site in future.</h4>
+    </div>
+    <div><a href ng-click="changeContent = !changeContent">Back</a></div>
+  </main>
+
+
+
+
+
+
+</div>

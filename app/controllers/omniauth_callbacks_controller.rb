@@ -19,7 +19,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 		if @user.persisted?
 		      flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => kind.titleize
-		      sign_in_and_redirect @user, :event => :authentication               
+		      sign_in(@user)
+		      redirect_to static_index_path, :event => :authentication               
 		    else
 		      session["devise.authentication"] = auth
 		      flash[:notice] = session["devise.authentication"]

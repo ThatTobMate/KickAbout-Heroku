@@ -1,0 +1,41 @@
+<div class="teamback">
+  <main>
+    <section>
+      <h1>Create your own team</h1>
+      <form role="form" name="createTeamForm" class="pure-form pure-form-aligned" ng-submit="addTeam()">
+        <div class="pure-control-group">
+          <label for="name">Name</label>
+          <input type="text" id="Name" placeholder="Name" ng-model="newTeam.name">
+        </div>
+        <div class="pure-control-group">
+          <label for="location">Home Ground</label>
+          <input type="text" id="Location" placeholder="Home ground" ng-model="newTeam.location">
+        </div>
+        <div class="pure-control-group">
+          <label for="league">League</label>
+          <select ng-model="newTeam.league_id">
+            <option ng-repeat="league in leagues" value="{{league.id}}">{{league.name}}</option>
+            League
+          </select>
+        </div class="pure-control-group">
+        <button class="pure-button pure-button-primary" type="submit" ng-click="homePage()">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h1>Join a friend's team</h1>
+      <form role="form" class="pure-form" name="joinTeamForm" ng-submit="joinTeam()">
+        <div>
+          <label for="team_id">Team</label>
+          <select ng-model="joinTeam.team_id">
+            <option ng-repeat="team in teams" value="{{team.id}}">{{team.name}}</option>
+            Team
+          </select>
+        </div>
+<!--     <input type="number" id="Team_id" placeholder="Team" ng-model="joinTeam.team_id">
+</div> -->
+<button class="pure-button pure-button-primary" type="submit" ng-click="homePage()">Submit</button>
+</form>
+
+</main>
+</div>

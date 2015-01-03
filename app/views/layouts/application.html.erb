@@ -6,7 +6,10 @@
 
   <title>Kick-About!</title>
   <%= include_gon %>
-
+  <!-- Removing added strings to the url on refresh of the page -->
+  <script type="text/javascript"> var idx=window.location.toString().indexOf("#_=_"); if (idx>0) { window.location = window.location.toString().substring(0, idx); } </script>
+  <script type="text/javascript"> var idx=window.location.toString().indexOf("#close"); if (idx>0) { window.location = window.location.toString().substring("0", idx); } </script>
+  <!-- Removing added strings to the url on refresh of the page -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
@@ -43,6 +46,7 @@
     </ul>
     <ul> 
       <li class="user_menu"> <%= link_to 'Edit Profile', edit_user_registration_path %></li>
+      <li><a href="#openModal" class="user_menu">Link Accounts</a></li>
       <li class="user_menu"> <%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
 
       <% end %>
@@ -50,6 +54,15 @@
 
 
 
+  </div>
+
+  <div id="openModal" class="modalDialog">
+      <div> <a href="#close" title="Close" class="close">X</a>
+        <h5>Link your social network accounts</h5>
+        <%= link_to "Link Twitter", user_omniauth_authorize_path(:twitter), :class => "pure-button button-secondary" %>
+        <%= link_to "Link Facebook", user_omniauth_authorize_path(:facebook), :class => "pure-button pure-button-primary" %>
+        <%= link_to "Link Google", user_omniauth_authorize_path(:google_oauth2), :class => "pure-button button-error" %>
+      </div>
   </div>
 
 

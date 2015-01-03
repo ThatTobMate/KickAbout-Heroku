@@ -40,17 +40,10 @@
   width: 100%;
 }
 
-.sign_in{
-  position: relative;
-  bottom: 100px;
-  margin: 0 auto;
-  width: 15%;
-}
-
 .matchback{
   background-image: url('https://s3-eu-west-1.amazonaws.com/kickabout/F1.jpg');
   background-size: 100% 100%;
-  height: 120%;
+  height: 140%;
   width: 100%;
 }
 
@@ -235,12 +228,75 @@ main{
   height: 50px;
 }
 
+
+.sign_in{
+  position: relative;
+  bottom: 200px;
+  margin: 0 auto;
+  width: 15%;
+}
+
 .social{
   width: 600px;
   margin: 0 auto;
   position: relative;
-  bottom: 250px;
-  left: 100px;
+  bottom: 150px;
+  left: 90px;
+}
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    text-align: center;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 500px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.modalDialog > div .pure-button{
+  width: 32%;
+  margin-top: 5px;
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+    background: #00d9ff;
 }
 
 @media screen and (max-width: 720px) {
@@ -310,22 +366,61 @@ main{
 .sign_in{
   margin: 25%;
   width: 15%;
+  position: relative;
+  top: -80px;
 }
 
 .social{
   width: 300px;
   margin: 0 auto;
   position: relative;
-  bottom: 0px;
+  bottom: 150px;
   left: 50px;
 }
 
 .social a{
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .landing_back{
   height: 120%;
+  width: 110%;
+  /*position: fixed;*/
+}
+.matchback{
+  height: 150%;
+}
+
+.modalDialog > div {
+    width: 300px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.modalDialog > div .pure-button{
+  width: 90%;
+  margin-top: 5px;
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
 }
 
 }

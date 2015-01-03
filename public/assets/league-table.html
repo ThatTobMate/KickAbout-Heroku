@@ -1,0 +1,63 @@
+<div class="leagueback">
+  <main>
+    <h1>Your League</h1>
+    <h3>Click a team to challenge them to a match</h3>
+    <table ng-repeat="league in gon_leagues" ng-hide="selectedTeam" class="pure-table">
+      <thead>
+        <th>{{league.name}}</th>
+        <tr>
+          <th>Team</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="team in league.teams | orderBy: 'points': reverse=true"  class="pure-table-odd">
+          <td ng-click="selectTeam(team)"><a href="#">{{team.name}}</a></td>
+          <td>{{team.wins}}</td>
+          <td>{{team.draws}}</td>
+          <td>{{team.losses}}</td>
+          <td>{{team.points}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div ng-show="selectedTeam">
+      <table>  
+        <tr>   
+          <td>Team Name</td>  
+          <td>{{ selectedTeam.name }}</td>   
+        </tr>  
+        <tr>  
+          <td>Team's Home Ground</td>  
+          <td> {{ selectedTeam.location}}</td>   
+        </tr>  
+      </table>
+
+      <form role="form" class="pure-form pure-form-aligned" name="createChallengeForm" ng-submit="challengeTeam()">
+        <fieldset>
+          <div class="pure-control-group">
+            <label for="title">Message</label>
+            <input type="text" id="Title" placeholder="Message.." ng-model="matchTeam.title">
+          </div>
+          <div class="pure-control-group">
+            <label for="location">Location of match</label>
+            <input type="text" id="Location" placeholder="Where?" ng-model="matchTeam.location">
+          </div>
+          <div class="pure-control-group">
+            <label for="time">Time of match</label>
+            <input type="time" id="Time" placeholder="Time" ng-model="matchTeam.time">
+          </div>
+          <div class="pure-control-group">
+            <label for="date">Date of match</label>
+            <input type="date" id="Date" placeholder="Date" ng-model="matchTeam.date">
+          </div>
+          <div class="pure-control-group">
+            <button class="button-success pure-button" type="submit">Submit</button>
+            <button class="button-warning pure-button" ng-click="clearSelectedTeam()">Cancel</button>
+          </div>
+        </form>
+
+      </main>
+    </div>

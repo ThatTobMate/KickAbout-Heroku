@@ -18,7 +18,7 @@
   <%= f.text_field :location%></div>
 
   <div class="pure-control-group"><%= f.label :DOB %><br />
-  <%= f.date_select :dob%></div>
+  <%= date_select("user", "dob", order: [:day, :month, :year], start_year: 1900, end_year: 2014) %></div>
 
   <div class="pure-control-group"><%= f.label :height %>(cm)<br />
   <%= f.number_field :height%></div>

@@ -49,7 +49,6 @@ class TeamMatchesController < ApplicationController
 
   def update_score
     @team_match = TeamMatch.find(params[:id])
-
     params1 = params[:team_match]
     @team_match.team_a_score = params1[:team_a_score]
     @team_match.team_b_score = params1[:team_b_score]
